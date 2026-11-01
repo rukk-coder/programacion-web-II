@@ -3,16 +3,16 @@ import React, { useState, useEffect } from 'react';
 export default function App() {
   const [currentPage, setCurrentPage] = useState('api');
   
-  // Estados para la Consigna A (PokeAPI)
+  // Estados para (PokeAPI)
   const [pokemon, setPokemon] = useState(null);
   const [loading, setLoading] = useState(true);
   const [pokemonId, setPokemonId] = useState(25); // Pikachu por defecto
 
-  // Estados para la Consigna C (Formulario)
+  // Formulario
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [enviado, setEnviado] = useState(false);
 
-  // Consigna A: Obtener datos de la API pública (PokeAPI)
+  // Obtener datos de la API pública (PokeAPI)
   useEffect(() => {
     setLoading(true);
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`)
@@ -27,7 +27,7 @@ export default function App() {
       });
   }, [pokemonId]);
 
-  // Consigna B: Array local de objetos con imagen
+  // Array local de objetos con imagen
   const localItems = [
     {
       id: 1,
@@ -52,7 +52,7 @@ export default function App() {
     }
   ];
 
-  // Manejo del formulario (Consigna C)
+  // Manejo del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
     setEnviado(true);
